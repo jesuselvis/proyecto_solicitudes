@@ -52,7 +52,7 @@
               label="Tipo de Solicitud"
               outlined
               v-model="modelSolicitud"
-              :loading="getTipoSolicitud"
+
               :options="listaTipoDoc.tipos_solicitudes"
               :dense="dense"
               :options-dense="denseOpts"
@@ -69,7 +69,7 @@
               label="Tipo de solicitante"
               outlined
               v-model="modelTipoSolicitante"
-              :loading="getTipoSolicitud"
+
               :options="listaTipoDoc.tipos_solicitante"
               :dense="dense"
               :options-dense="denseOpts"
@@ -175,7 +175,7 @@ export default {
       materno,
       nombres,
       fecha,
-    
+
       procesarFormualario,
       reset,
 
@@ -212,8 +212,8 @@ export default {
         materno:this.materno,
         nombres:this.nombres,
         fecha:this.fecha,
-        solicitudes_id: this.modelSolicitud.id,
-        solicitante_id: this.modelTipoSolicitante.id
+        solicitudes_id: parseInt(this.modelSolicitud.id),
+        solicitantes_id: parseInt(this.modelTipoSolicitante.id)
 
       }
       console.log(data)
