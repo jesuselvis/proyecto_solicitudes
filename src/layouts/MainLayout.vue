@@ -45,6 +45,15 @@
                 About
               </q-item-section>
             </q-item>
+            <q-item clickable v-ripple to="/verSolicitudes" active-class="my-menu-link">
+              <q-item-section avatar>
+                <q-icon name="send" />
+              </q-item-section>
+
+              <q-item-section>
+                Solicitudes
+              </q-item-section>
+            </q-item>
           </q-list>
         </q-scroll-area>
 
@@ -69,14 +78,15 @@
 
 <script>
 import { defineComponent, ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+
+import verSolicitudes from 'components/verSolicitudes.vue'
 
 
 export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+    verSolicitudes
   },
 
   setup () {
