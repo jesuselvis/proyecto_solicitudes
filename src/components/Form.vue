@@ -1,7 +1,7 @@
 <template>
   <q-page padding>
     <h3>
-    <pre>{{nro_documento}}-{{paterno}}-{{materno}}-{{nombres}}- {{fecha}}-{{solicitudes_id}}-{{solicitante_id}}</pre>
+    <!-- <pre>{{nro_documento}}-{{paterno}}-{{materno}}-{{nombres}}- {{fecha}}-{{modelSolicitud.id}}-{{modelTipoSolicitante.id}}</pre> -->
   </h3>
     <h4>Agregar Solicitud</h4>
     <q-form class="row q-col-gutter-md" @submit.prevent="procesarFormualario">
@@ -47,16 +47,6 @@
               name="fecha"
             />
         </div>
-<!--
-        <div class="col-12 col-sm-6 col-md-4">
-              <q-file color="teal" filled v-model="model" label="Subir Imagen">
-                  <template v-slot:prepend>
-              <q-icon name="cloud_upload" />
-                  </template>
-              </q-file>
-
-        </div>-->
-
         <div class="col-12 col-sm-6 col-md-4">
               <q-select
               label="Tipo de Solicitud"
@@ -180,17 +170,12 @@ export default {
       modelSolicitud,
       modelTipoSolicitante,
       listaTipoDoc,
-
-
       nro_documento,
       paterno,
       materno,
       nombres,
       fecha,
-      solicitudes_id,
-      solicitante_id,
-
-
+    
       procesarFormualario,
       reset,
 
@@ -227,8 +212,8 @@ export default {
         materno:this.materno,
         nombres:this.nombres,
         fecha:this.fecha,
-        solicitudes_id: this.solicitudes_id,
-        solicitante_id: this.solicitante_id
+        solicitudes_id: this.modelSolicitud.id,
+        solicitante_id: this.modelTipoSolicitante.id
 
       }
       console.log(data)
